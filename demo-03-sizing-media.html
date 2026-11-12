@@ -25,18 +25,29 @@
             margin-bottom: 20px;
         }
 
+        /* Not responsive: the image keeps its original 720px width
+           and overflows the container */
+        .container-fixed img {
+            width: 720px;
+            height: 450px;
+        }
+
+        /* Responsive: the image never grows bigger than its container
+           and keeps its aspect ratio */
         .container-responsive img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 
 <body>
     <div class="container-responsive">
-        <img src="https://picsum.photos/id/237/720/450">
+        <img src="images/sample.jpg" alt="Sunset over mountains">
     </div>
 
     <div class="container-fixed">
-        <img src="https://picsum.photos/id/237/720/450">
+        <img src="images/sample.jpg" alt="Sunset over mountains">
     </div>
     <div class="navigation">
         <a href="index.html">Back to Home</a>

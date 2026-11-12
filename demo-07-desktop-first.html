@@ -13,6 +13,56 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* DESKTOP FIRST: base styles are for large screens.
+           Smaller screens override them with max-width queries. */
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 80px 1fr 60px;
+            grid-template-areas:
+                "header header header"
+                "left   main   right"
+                "footer footer footer";
+        }
+
+        .header    { grid-area: header; background-color: lightcoral; }
+        .left-bar  { grid-area: left;   background-color: lightblue; }
+        .main      { grid-area: main;   background-color: lightyellow; }
+        .right-bar { grid-area: right;  background-color: lightgreen; }
+        .footer    { grid-area: footer; background-color: plum; }
+
+        .header, .left-bar, .main, .right-bar, .footer {
+            padding: 16px;
+        }
+
+        /* Tablet: screen <= 1024px. Drop the right bar below the main area */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 200px 1fr;
+                grid-template-rows: 80px 1fr 100px 60px;
+                grid-template-areas:
+                    "header header"
+                    "left   main"
+                    "right  right"
+                    "footer footer";
+            }
+        }
+
+        /* Phone: screen <= 640px. Everything stacks in one column */
+        @media (max-width: 640px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "left"
+                    "right"
+                    "footer";
+            }
+        }
     </style>
 </head>
 

@@ -14,10 +14,19 @@
         .main {
             background-color: lightpink;
             margin: 0 auto;
+            /* Relative width: 80% of the window, but never wider than 1000px */
+            width: 80%;
+            max-width: 1000px;
+            min-width: 300px;
+            height: 300px;
+            padding: 20px;
         }
 
         .subsection {
             background-color: lightblue;
+            /* 50% of the parent (.main), not of the window */
+            width: 50%;
+            height: 50%;
         }
     </style>
 </head>

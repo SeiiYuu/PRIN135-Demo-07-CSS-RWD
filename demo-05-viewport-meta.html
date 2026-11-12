@@ -3,8 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Viewport meta tag: tells mobile browsers to use the real device width
+         instead of pretending to be a ~980px-wide desktop screen.
+         Try deleting this line and opening the page on a phone (or DevTools
+         device mode) to see the difference. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo: Viewport Meta Tag</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .box {
+            background-color: lightblue;
+            border: 2px solid #333;
+            padding: 16px;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 
 <body>
